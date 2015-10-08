@@ -1,0 +1,13 @@
+
+.header {
+  height: 100px;
+  border-bottom-style: solid;
+  border-bottom: thick solid #008000;
+}
+.header * {
+	height: 100%;
+}
+
+.header img{
+	display:block;
+}
