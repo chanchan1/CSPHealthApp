@@ -16,6 +16,9 @@
 			<form action="RegisterForm.jsp" method="post">
 				<br/><input type="submit" value="Register" style="width: 150px">
 			</form>
+			<form action="Test.jsp" method="post">
+				<br/><input type="submit" value="Test Page :)" style="width: 150px">
+			</form>
 		</center>
 	</body>
 </html>

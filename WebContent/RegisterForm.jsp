@@ -7,9 +7,8 @@
 		<title>yourHealth</title>
 	</head>
 	<body>
-		<h1>Login Page</h1>
 		<center>
-			<h2>Signup Details</h2>
+			<h1>Register Details</h1>
 			<form action="LoginCheck.jsp" method="post">
 				<br/>Select a username: <input type="text" name="username">
 				<br/>Provide a password: <input type="text" name="password">
