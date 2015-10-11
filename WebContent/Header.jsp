@@ -1,3 +1,9 @@
+<%-- Health Web Application
+		Dozent: Dr. Christoph Peylo
+		Teilnehmer: Sarah Schuchardt, Alexander Schmitz, Sebastian Dittrich
+		=========================================================================
+		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
+		
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
