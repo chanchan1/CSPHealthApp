@@ -15,7 +15,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Insert title here</title>
+		<title>Health Data</title>
 		<link rel="stylesheet" href="style/yourHealth.css">
 		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
@@ -24,8 +24,9 @@
 	<jsp:include page="Header.jsp"></jsp:include>
 
 	<div class="container">
-		<h2>Add Health Data</h2>
-			<form action="AddHealthData" method="post">
+		<div class="panel panel-default">
+  			<div class="panel-heading">Add Health Data</div>
+  			<form action="AddHealthData" method="post">
 				Height: <input type="text" name="height">
 				Weight: <input type="text" name="weight">
 				Allergies: <input type="text" name="allergies">
@@ -34,8 +35,41 @@
 				Blood Type: <input type="text" name="bloodType">
 				<input type="submit" value="Add">
 			</form>
+  			<!-- <div class="panel-body">	
+  			
+  			<form action="AddHealthData" method="post">
+				<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Height</span>
+	  					<input type="text" class="form-control" placeholder="1,60" aria-describedby="basic-addon1">
+					<span class="input-group-addon">m</span>
+				</div>
+	  			<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Weight</span>
+	  					<input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon1">
+					<span class="input-group-addon">kg</span>
+					</div>
+	  			<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Allergies</span>
+	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+					</div>
+				<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Blood Sugar</span>
+	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+					</div>
+				<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Cholesterol Level</span>
+	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+					</div>
+				<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1">Blood Type</span>
+	  					<input type="text" class="form-control" placeholder="A,B,AB,0" aria-describedby="basic-addon1">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+	  			</div>
+			</form>  -->
+			</div>
 		<h2>Health Data</h2>
-		<table class="table-striped">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<td>Height</td>
@@ -64,7 +98,7 @@
 
 	<!-- Footer -->
 	<ul class="nav nav-tabs">
-	  <li role="presentation"><a href="Home.jsp">Übersicht</a></li>
+	  <li role="presentation"><a href="Home.jsp">&Uuml;bersicht</a></li>
 	  <li role="presentation" class="active"><a href="Health.jsp">Health</a></li>
 	  <li role="presentation"><a href="Fitness.jsp">Fitness</a></li>
 	</ul>

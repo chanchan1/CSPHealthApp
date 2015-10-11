@@ -34,8 +34,8 @@ public class AddHealthData extends HttpServlet {
 		// TODO Add form data to health data
 		
 		HttpSession session = request.getSession();
-		
-		double height = (double) Double.parseDouble(request.getParameter("height"));
+		String a = request.getParameter("height");
+		double height = (double) Double.parseDouble(a);
 		double weight= (double) Double.parseDouble(request.getParameter("height"));
 		String allergies =request.getParameter("allergies");
 		double bloodSugar=(double) Double.parseDouble(request.getParameter("height"));

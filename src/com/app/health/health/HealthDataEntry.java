@@ -75,6 +75,7 @@ public class HealthDataEntry {
 	}
 
 	public void setBloodType(String bloodType) {
+		System.out.println(bloodType);
 		switch (bloodType) {
 		case "A":
 			this.bloodType = BloodType.A;
