@@ -35,7 +35,7 @@
 				<input type="submit" value="Add">
 			</form>
 		<h2>Health Data</h2>
-		<table>
+		<table class="table-striped">
 			<thead>
 				<tr>
 					<td>Height</td>
@@ -64,7 +64,7 @@
 
 	<!-- Footer -->
 	<ul class="nav nav-tabs">
-	  <li role="presentation"><a href="Home.jsp">Übersicht</a></li>
+	  <li role="presentation"><a href="Home.jsp">Ãœbersicht</a></li>
 	  <li role="presentation" class="active"><a href="Health.jsp">Health</a></li>
 	  <li role="presentation"><a href="Fitness.jsp">Fitness</a></li>
 	</ul>
