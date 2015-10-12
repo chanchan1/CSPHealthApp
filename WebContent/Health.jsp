@@ -1,3 +1,9 @@
+<%-- Health Web Application
+		Dozent: Dr. Christoph Peylo
+		Teilnehmer: Sarah Schuchardt, Alexander Schmitz, Sebastian Dittrich
+		=========================================================================
+		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
+		
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -29,7 +35,7 @@
 				<input type="submit" value="Add">
 			</form>
 		<h2>Health Data</h2>
-		<table>
+		<table class="table-striped">
 			<thead>
 				<tr>
 					<td>Height</td>
@@ -58,7 +64,7 @@
 
 	<!-- Footer -->
 	<ul class="nav nav-tabs">
-	  <li role="presentation"><a href="Home.jsp">Übersicht</a></li>
+	  <li role="presentation"><a href="Home.jsp">Ãœbersicht</a></li>
 	  <li role="presentation" class="active"><a href="Health.jsp">Health</a></li>
 	  <li role="presentation"><a href="Fitness.jsp">Fitness</a></li>
 	</ul>
