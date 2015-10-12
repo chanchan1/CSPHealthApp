@@ -23,10 +23,15 @@
 	<!-- Header -->
 	<jsp:include page="Header.jsp"></jsp:include>
 
-	<div class="container">
+	<div class="container" id="body-container">
+	<c:if test="${not empty error}">
+		<div class="alert alert-danger" role="alert">
+		${error}<br /></div>
+	</c:if>
+	
 		<div class="panel panel-default">
   			<div class="panel-heading">Add Health Data</div>
-  			<form action="AddHealthData" method="post">
+  			<!-- <form action="AddHealthData" method="post">
 				Height: <input type="text" name="height">
 				Weight: <input type="text" name="weight">
 				Allergies: <input type="text" name="allergies">
@@ -34,39 +39,39 @@
 				Cholesterol Level: <input type="text" name="cholesterolLevel">
 				Blood Type: <input type="text" name="bloodType">
 				<input type="submit" value="Add">
-			</form>
-  			<!-- <div class="panel-body">	
+			</form> -->
+  			<div class="panel-body">	
   			
   			<form action="AddHealthData" method="post">
 				<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Height</span>
-	  					<input type="text" class="form-control" placeholder="1,60" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="1,60" name="height" aria-describedby="basic-addon1">
 					<span class="input-group-addon">m</span>
 				</div>
 	  			<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Weight</span>
-	  					<input type="text" class="form-control" placeholder="60" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="60" name="weight" aria-describedby="basic-addon1">
 					<span class="input-group-addon">kg</span>
 					</div>
 	  			<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Allergies</span>
-	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="" name="allergies" aria-describedby="basic-addon1">
 					</div>
 				<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Blood Sugar</span>
-	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="" name="bloodSugar" aria-describedby="basic-addon1">
 					</div>
 				<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Cholesterol Level</span>
-	  					<input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="" name="cholesterolLevel" aria-describedby="basic-addon1">
 					</div>
 				<div class="input-group">
 	  				<span class="input-group-addon" id="basic-addon1">Blood Type</span>
-	  					<input type="text" class="form-control" placeholder="A,B,AB,0" aria-describedby="basic-addon1">
+	  					<input type="text" class="form-control" placeholder="A, B, AB or 0" name="bloodType" aria-describedby="basic-addon1">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 	  			</div>
-			</form>  -->
+			</form> 
 			</div>
 		<h2>Health Data</h2>
 		<table class="table table-striped">
