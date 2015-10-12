@@ -1,5 +1,10 @@
 package com.app.health.health;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class HealthDataEntry {
 
 	private double height;
@@ -7,6 +12,7 @@ public class HealthDataEntry {
 	private String allergies;
 	private double bloodSugar;
 	private double cholesterolLevel;
+	private Date creationDate;
 	private BloodType bloodType;
 
 	public HealthDataEntry(double height, double weight, String allergies, double bloodSugar, double cholesterolLevel,
@@ -17,13 +23,14 @@ public class HealthDataEntry {
 		this.allergies = allergies;
 		this.bloodSugar = bloodSugar;
 		this.cholesterolLevel = cholesterolLevel;
+		this.creationDate = Calendar.getInstance().getTime();
 		this.setBloodType(bloodType);
 	}
 
 	@Override
 	public String toString() {
 		return "[H: " + this.height + ", W: " + this.weight + ", A: " + this.allergies + ", B: " + this.bloodSugar
-				+ ", C: " + this.cholesterolLevel + ", BT: " + this.bloodType.name()+"]";
+				+ ", C: " + this.cholesterolLevel + ", D: "+this.creationDate+" BT: " + this.bloodType.name()+"]";
 	}
 
 	public double getHeight() {
@@ -75,7 +82,6 @@ public class HealthDataEntry {
 	}
 
 	public void setBloodType(String bloodType) {
-		System.out.println(bloodType);
 		switch (bloodType) {
 		case "A":
 			this.bloodType = BloodType.A;
@@ -90,6 +96,26 @@ public class HealthDataEntry {
 			this.bloodType = BloodType.ZERO;
 			break;
 		}
+	}
+
+	public String getCreationDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    return sdf.format(this.creationDate);
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public void setCreationDate(String creationDate) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			cal.setTime(sdf.parse(creationDate));
+		} catch (ParseException e) {
+			System.out.println("Error while parsing date "+creationDate);
+		}
+		this.creationDate = cal.getTime();
 	}
 
 }

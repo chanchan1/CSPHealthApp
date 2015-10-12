@@ -29,7 +29,7 @@
 	
 	<!-- Footer -->
 	<ul class="nav nav-tabs">
-	  <li role="presentation" class="active"><a href="Home.jsp">Übersicht</a></li>
+	  <li role="presentation" class="active"><a href="Home.jsp">&Uuml;bersicht</a></li>
 	  <li role="presentation"><a href="Health.jsp">Health</a></li>
 	  <li role="presentation"><a href="Fitness.jsp">Fitness</a></li>
 	</ul>
