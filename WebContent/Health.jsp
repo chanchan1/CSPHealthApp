@@ -13,9 +13,9 @@
 <head>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Health Data</title>
+		<title>CSPHealthApp Help</title>
 		<link rel="stylesheet" href="style/yourHealth.css">
 		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
@@ -24,10 +24,6 @@
 	<jsp:include page="Header.jsp"></jsp:include>
 
 	<div class="container" id="body-container">
-	<c:if test="${not empty error}">
-		<div class="alert alert-danger" role="alert">
-		${error}<br /></div>
-	</c:if>
 	<div class="row">
 		<div class="col-md-6">
 			<h2>Health Data</h2>
