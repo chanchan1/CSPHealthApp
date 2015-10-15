@@ -13,6 +13,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Welcome to yourHealth! - Please login or register</title>
+		<link rel="stylesheet" href="style/yourHealth.css">
+		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
 	<body>
 		<center>

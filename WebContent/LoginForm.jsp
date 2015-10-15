@@ -12,11 +12,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>yourHealth</title>
+		<title>yourHealth Login</title>
+		<link rel="stylesheet" href="style/yourHealth.css">
+		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
 	<body>
 		<!-- Header -->
-	<jsp:include page="Header.jsp"></jsp:include>
+
 		<center>
 			<h1>Login Page</h1>
 			<h2>Signup Details</h2>
@@ -26,6 +28,5 @@
 				<br/><input type="submit" value="Submit">
 			</form>
 		</center>
-		<jsp:include page="Footer.jsp"></jsp:include>
 	</body>
 </html>
