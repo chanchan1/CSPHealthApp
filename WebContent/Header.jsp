@@ -15,6 +15,9 @@
 		<h1>yourHealth</h1>
 	</div>
 	<div class="col-xs-1 col-xs-offset-6 col-md-1 col-md-offset-5">
-		${username}<BR />
+		<h3>
+			${username}  
+			<a href="Help.jsp">?</a>
+		</h3>
 	</div>
 </div>
