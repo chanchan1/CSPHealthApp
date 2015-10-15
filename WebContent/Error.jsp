@@ -15,6 +15,9 @@
 		<title>yourHealth</title>
 	</head>
 	<body>
+		<!-- Header -->
+	<jsp:include page="Header.jsp"></jsp:include>
 		<h1>Some Error has occured, please try again later :-(</h1>
+		<jsp:include page="Footer.jsp"></jsp:include>
 	</body>
 </html>		

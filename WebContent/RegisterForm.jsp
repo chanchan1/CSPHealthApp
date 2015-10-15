@@ -15,6 +15,8 @@
 		<title>yourHealth</title>
 	</head>
 	<body>
+		<!-- Header -->
+	<jsp:include page="Header.jsp"></jsp:include>
 		<center>
 			<h1>Register Details</h1>
 			<form action="LoginCheck.jsp" method="post">
@@ -24,5 +26,6 @@
 				<br/><input type="submit" value="Submit">
 			</form>
 		</center>
+		<jsp:include page="Footer.jsp"></jsp:include>
 	</body>
 </html>
