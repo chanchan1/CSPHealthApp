@@ -4,7 +4,7 @@
 		=========================================================================
 		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
 		
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -20,7 +20,7 @@
 		<center>
 			<!-- <h1>Welcome to yourHealth</h1> -->
 			<img src="logo/base.png">
-			<form action="LoginForm.jsp" method="post">
+			<form action="Home.jsp" method="post">
 				<br/><input type="submit" value="Login" style="width: 150px">
 			</form>
 			<form action="RegisterForm.jsp" method="post">

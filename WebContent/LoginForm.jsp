@@ -4,7 +4,7 @@
 		=========================================================================
 		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
 		
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -21,7 +21,7 @@
 
 		<center>
 			<h1>Login Page</h1>
-			<h2>Sign up Details</h2>
+			<h2>Signup Details</h2>
 			<form action="j_security_check" method="post">
 				<br/>Username: <input type="text" name="j_username">
 				<br/>Password: <input type="password" name="j_password">
