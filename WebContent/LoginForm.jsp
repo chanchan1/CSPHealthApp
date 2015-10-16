@@ -21,7 +21,7 @@
 
 		<center>
 			<h1>Login Page</h1>
-			<h2>Signup Details</h2>
+			<h2>Sign up Details</h2>
 			<form action="j_security_check" method="post">
 				<br/>Username: <input type="text" name="j_username">
 				<br/>Password: <input type="password" name="j_password">
