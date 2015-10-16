@@ -11,14 +11,14 @@
 <div class="container-fluid header">
 	<div class="row">
 		<div class="col-xs-1 col-md-1">
-			<img alt="yourHealth-Logo" src="logo/base.png">
+			<a href="Home.jsp"><img alt="yourHealth-Logo" src="logo/base.png"></a>
 		</div>
 		<div class="col-xs-1 col-xs-offset-2 col-md-2 col-md-offset-3">
 			<h1>yourHealth</h1>
 		</div>
 		<div class="col-xs-1 col-xs-offset-6 col-md-1 col-md-offset-5">
 			<h3>
-				${username}  
+				<%= request.getUserPrincipal().getName() %>
 				<a href="Help.jsp">?</a>
 			</h3>
 		</div>
