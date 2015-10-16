@@ -12,6 +12,6 @@
 
 <hr/>	
 
-<div style="text-align:right">Impressum | <a href="Logout.jsp">Logout</a></div>
+<div style="text-align:right">Impressum | <c:if test="${not empty pageContext.request.userPrincipal.name}"><a href="DoUserLogout">Logout</a></c:if></div>
 
 </footer>

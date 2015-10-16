@@ -18,7 +18,9 @@
 		</div>
 		<div class="col-xs-1 col-xs-offset-6 col-md-1 col-md-offset-5">
 			<h3>
-				<%= request.getUserPrincipal().getName() %>
+				<c:if test="${not empty pageContext.request.userPrincipal.name}">
+					<c:out value="${pageContext.request.userPrincipal.name }"/>
+				</c:if>
 				<a href="Help.jsp">?</a>
 			</h3>
 		</div>

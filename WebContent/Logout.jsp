@@ -19,11 +19,6 @@
 	<body>
 		<!-- Header -->
 		<jsp:include page="Header.jsp"></jsp:include>
-		<%
-			session.removeAttribute("username");
-			session.removeAttribute("password");
-			session.invalidate();
-		%>
 		<h1>You have been logged out of the system.</h1>
 		<jsp:include page="Footer.jsp"></jsp:include>
 	</body>
