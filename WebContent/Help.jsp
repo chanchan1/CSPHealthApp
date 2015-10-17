@@ -10,23 +10,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>yourHealth Login</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Health Data</title>
 		<link rel="stylesheet" href="style/yourHealth.css">
 		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
 	<body>
-		<!-- Header -->
+	<!-- Header -->
+	<jsp:include page="Header.jsp"></jsp:include>
 
-		<center>
-			<h1>Login Page</h1>
-			<h2>Signup Details</h2>
-			<form action="j_security_check" method="post">
-				<br/>Username: <input type="text" name="j_username">
-				<br/>Password: <input type="password" name="j_password">
-				<br/><input type="submit" value="Submit">
-			</form>
-		</center>
-	</body>
+	<div class="container" id="body-container">
+	<div class="row">
+		<h1>Here is the place where you can find help!</h1>
+	</div>
+	<div class="row">
+		not implemented yet
+	</div>
+	</div>
+	
+	
+
+	<!-- Footer -->
+	<jsp:include page="Footer.jsp"></jsp:include>
+</body>
 </html>

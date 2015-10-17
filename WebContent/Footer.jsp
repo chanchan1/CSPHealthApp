@@ -4,13 +4,14 @@
 		=========================================================================
 		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
 		
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <footer>
 
 <hr/>	
 
-<div style="text-align:right">Impressum | <a href="Logout.jsp">Logout</a></div>
+<div style="text-align:right">Impressum | <c:if test="${not empty pageContext.request.userPrincipal.name}"><a href="DoUserLogout">Logout</a></c:if></div>
 
 </footer>

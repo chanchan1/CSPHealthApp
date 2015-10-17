@@ -34,25 +34,31 @@ public class AddHealthData extends HttpServlet {
 		// TODO Add form data to health data
 		
 		HttpSession session = request.getSession();
-		
-		double height = (double) Double.parseDouble(request.getParameter("height"));
-		double weight= (double) Double.parseDouble(request.getParameter("height"));
-		String allergies =request.getParameter("allergies");
-		double bloodSugar=(double) Double.parseDouble(request.getParameter("height"));
-		double cholesterolLevel=(double) Double.parseDouble(request.getParameter("height"));
-		String bloodType =request.getParameter("bloodType");
-		
-		HealthDataEntry p = new HealthDataEntry(height,weight,allergies,bloodSugar, cholesterolLevel,bloodType);
-		
-		HealthDataEntries entries = (HealthDataEntries)session.getAttribute("healthData");
-		if(entries!=null){
-			entries.addEntry(p);
-		}else{
-			ArrayList<HealthDataEntry> newHealthData = new ArrayList<HealthDataEntry>(1);
-			newHealthData.add(p);
-			entries = new HealthDataEntries(newHealthData);
+		session.removeAttribute("error");
+		try{
+			String a = request.getParameter("height");
+			double height = (double) Double.parseDouble(a);
+			double weight= (double) Double.parseDouble(request.getParameter("height"));
+			String allergies =request.getParameter("allergies");
+			double bloodSugar=(double) Double.parseDouble(request.getParameter("height"));
+			double cholesterolLevel=(double) Double.parseDouble(request.getParameter("height"));
+			String bloodType =request.getParameter("bloodType");
+
+			HealthDataEntry p = new HealthDataEntry(height,weight,allergies,bloodSugar, cholesterolLevel,bloodType);
+			
+			HealthDataEntries entries = (HealthDataEntries)session.getAttribute("healthData");
+			if(entries!=null){
+				entries.addEntry(p);
+			}else{
+				ArrayList<HealthDataEntry> newHealthData = new ArrayList<HealthDataEntry>(1);
+				newHealthData.add(p);
+				entries = new HealthDataEntries(newHealthData);
+			}
+			session.setAttribute("healthData", entries);
 		}
-		session.setAttribute("healthData", entries);
+		catch(Exception e){
+			session.setAttribute("error", "An error occurred!");
+		}
 		request.getRequestDispatcher("Health.jsp").forward(request, response);
 	}
 
