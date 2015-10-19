@@ -23,8 +23,8 @@
 			<h1>Register Details</h1>
 			<form action="LoginCheck.jsp" method="post">
 				<br/>Select a username: <input type="text" name="username">
-				<br/>Provide a password: <input type="text" name="password">
-				<br/>Confirm password: <input type="text" name="password">
+				<br/>Provide a password: <input type="password" name="password">
+				<br/>Confirm password: <input type="password" name="password">
 				<br/><input type="submit" value="Submit">
 			</form>
 		</center>
