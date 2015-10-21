@@ -21,7 +21,7 @@
 	<!-- Header -->
 	<jsp:include page="Header.jsp"></jsp:include>
 
-	<div class="container">
+	<div class="container" id="body-container">
 		<h1>NOT IMPLEMENTED YET!</h1>
 	</div>
 	
