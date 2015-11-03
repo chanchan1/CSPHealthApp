@@ -1,7 +1,9 @@
 package com.app.health.health;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,12 +38,13 @@ public class AddHealthData extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("error");
 		try{
-			String a = request.getParameter("height");
-			double height = (double) Double.parseDouble(a);
-			double weight= (double) Double.parseDouble(request.getParameter("height"));
+			NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
+
+			double height = (double) nf.parse(request.getParameter("height"));
+			double weight= (double) nf.parse(request.getParameter("height"));
 			String allergies =request.getParameter("allergies");
-			double bloodSugar=(double) Double.parseDouble(request.getParameter("height"));
-			double cholesterolLevel=(double) Double.parseDouble(request.getParameter("height"));
+			double bloodSugar=(double) nf.parse(request.getParameter("height"));
+			double cholesterolLevel=(double) nf.parse(request.getParameter("height"));
 			String bloodType =request.getParameter("bloodType");
 
 			HealthDataEntry p = new HealthDataEntry(height,weight,allergies,bloodSugar, cholesterolLevel,bloodType);
