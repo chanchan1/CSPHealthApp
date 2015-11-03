@@ -98,7 +98,12 @@
 						<div class="col-md-6">
 							<div class="input-group">
 	  							<span class="input-group-addon" id="basic-addon1">Blood Type</span>
-	  								<input type="text" class="form-control" placeholder="A, B, AB or 0" name="bloodType" aria-describedby="basic-addon1">
+	  								<select name="bloodType" class="form-control" aria-describedby="basic-addon1">
+	  									<option>A</option>
+	  									<option>B</option>
+	  									<option>AB</option>
+	  									<option>0</option>
+	  								</select>
 							</div>
 						</div>
 					</div>
