@@ -55,24 +55,39 @@ public class AddHealthData extends HttpServlet {
 				entries = new HealthDataEntries(newHealthData);
 			}
 			session.setAttribute("healthData", entries);
-		} catch (Exception e) {
-			session.setAttribute("error", "An error occurred!");
+		} catch (IllegalArgumentException e) {
+			session.setAttribute("error", e.getMessage());
+		} catch (ParseException e) {
+			session.setAttribute("error", "Could'nt parse parameters!");
 		}
 		request.getRequestDispatcher("Health.jsp").forward(request, response);
 	}
 
-	private HealthDataEntry buildHealthDataEntryFromRequestParams(String height_s, String weight_s, String allergies_s,
+	public HealthDataEntry buildHealthDataEntryFromRequestParams(String height_s, String weight_s, String allergies_s,
 			String bloodSugar_s, String cholesterolLevel_s, String bloodType_s) throws ParseException {
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
 
-		double height = (double) nf.parse(height_s);
+		HealthDataEntry p = null;
+		
+		double height;
+		if(height_s.contains(",")){ //1,0
+			height = (double) nf.parse(height_s);
+		}else{//1
+			height = (double) nf.parse(height_s).intValue();
+		}
+		if(height<0){
+			throw new IllegalArgumentException("Height cannot be negative!");
+		}else if(height==0){
+			throw new IllegalArgumentException("Height cannot be zero!");
+		}
 		int weight = nf.parse(weight_s).intValue();
 		String allergies = allergies_s;
 		double bloodSugar = (double) nf.parse(bloodSugar_s);
 		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s);
 		String bloodType = bloodType_s;
 
-		HealthDataEntry p = new HealthDataEntry(height, weight, allergies, bloodSugar, cholesterolLevel, bloodType);
+		p = new HealthDataEntry(height, weight, allergies, bloodSugar, cholesterolLevel, bloodType);
+		
 		return p;
 	}
 
