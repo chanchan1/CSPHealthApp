@@ -64,14 +64,14 @@ public class AddHealthData extends HttpServlet {
 	}
 
 	public HealthDataEntry buildHealthDataEntryFromRequestParams(String height_s, String weight_s, String allergies_s,
-			String bloodSugar_s, String cholesterolLevel_s, String bloodType_s) throws ParseException {
+			String bloodSugar_s, String cholesterolLevel_s, String bloodType_s) throws ParseException, IllegalArgumentException {
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
 
 		HealthDataEntry p = null;
 		
 		double height;
-		if(height_s.contains(",")){ //1,0
-			height = (double) nf.parse(height_s);
+		if(height_s.contains(",")){ //1.0
+			height = (double) nf.parse(height_s).intValue();
 		}else{//1
 			height = (double) nf.parse(height_s).intValue();
 		}
@@ -82,8 +82,8 @@ public class AddHealthData extends HttpServlet {
 		}
 		int weight = nf.parse(weight_s).intValue();
 		String allergies = allergies_s;
-		double bloodSugar = (double) nf.parse(bloodSugar_s);
-		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s);
+		double bloodSugar = (double) nf.parse(bloodSugar_s).intValue();
+		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s).intValue();
 		String bloodType = bloodType_s;
 
 		p = new HealthDataEntry(height, weight, allergies, bloodSugar, cholesterolLevel, bloodType);
