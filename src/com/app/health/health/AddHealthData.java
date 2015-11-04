@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.owasp.esapi.*;
+import com.testing.Person;
+import com.testing.Persons;
 
 /**
  * Servlet implementation class AddHealthData
@@ -80,7 +81,7 @@ public class AddHealthData extends HttpServlet {
 			throw new IllegalArgumentException("Height cannot be zero!");
 		}
 		int weight = nf.parse(weight_s).intValue();
-		String allergies = ESAPI.encoder().encodeForHTML( allergies_s );
+		String allergies = allergies_s;
 		double bloodSugar = (double) nf.parse(bloodSugar_s).intValue();
 		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s).intValue();
 		String bloodType = bloodType_s;
