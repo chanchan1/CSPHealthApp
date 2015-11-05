@@ -15,7 +15,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CSPHealthApp Help</title>
+		<title>CSPHealthApp Health Data</title>
 		<link rel="stylesheet" href="style/yourHealth.css">
 		<link rel="stylesheet" href="style/bootstrap.css">
 	</head>
@@ -78,13 +78,13 @@
 						<div class="col-md-6">
 							<div class="input-group">
 	  							<span class="input-group-addon" id="basic-addon1">Allergies</span>
-	  								<input type="text" class="form-control" placeholder="" name="allergies" aria-describedby="basic-addon1">
+	  								<input type="text" class="form-control" placeholder="Staub, Pollen, ..." name="allergies" aria-describedby="basic-addon1">
 							</div>		
 						</div>
 						<div class="col-md-6">
 							<div class="input-group">
 	  							<span class="input-group-addon" id="basic-addon1">Blood Sugar</span>
-	  								<input type="text" class="form-control" placeholder="" name="bloodSugar" aria-describedby="basic-addon1">
+	  								<input type="text" class="form-control" placeholder="5,0" name="bloodSugar" aria-describedby="basic-addon1">
 							</div>		
 						</div>
 					</div>
@@ -92,7 +92,7 @@
 						<div class="col-md-6">
 							<div class="input-group">
 	  							<span class="input-group-addon" id="basic-addon1">Cholesterol Level</span>
-	  								<input type="text" class="form-control" placeholder="" name="cholesterolLevel" aria-describedby="basic-addon1">
+	  								<input type="text" class="form-control" placeholder="1,0" name="cholesterolLevel" aria-describedby="basic-addon1">
 							</div>
 						</div>
 						<div class="col-md-6">
