@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.testing.Person;
-import com.testing.Persons;
+import org.apache.log4j.Logger;
+import org.owasp.esapi.ESAPI;
+
 
 /**
  * Servlet implementation class AddHealthData
@@ -22,6 +23,7 @@ import com.testing.Persons;
 @WebServlet("/AddHealthData")
 public class AddHealthData extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	final static Logger logger = Logger.getLogger(AddHealthData.class);
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -81,7 +83,8 @@ public class AddHealthData extends HttpServlet {
 			throw new IllegalArgumentException("Height cannot be zero!");
 		}
 		int weight = nf.parse(weight_s).intValue();
-		String allergies = allergies_s;
+		String allergies = ESAPI.encoder().encodeForHTML(allergies_s);		
+				
 		double bloodSugar = (double) nf.parse(bloodSugar_s).intValue();
 		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s).intValue();
 		String bloodType = bloodType_s;
