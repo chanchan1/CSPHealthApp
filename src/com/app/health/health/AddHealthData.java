@@ -58,7 +58,7 @@ public class AddHealthData extends HttpServlet {
 		} catch (IllegalArgumentException e) {
 			session.setAttribute("error", e.getMessage());
 		} catch (ParseException e) {
-			session.setAttribute("error", "Could'nt parse parameters!");
+			session.setAttribute("error", "Couldn't parse parameters!");
 		}
 		request.getRequestDispatcher("Health.jsp").forward(request, response);
 	}
@@ -71,7 +71,8 @@ public class AddHealthData extends HttpServlet {
 		
 		double height;
 		if(height_s.contains(",")){ //1.0
-			height = (double) nf.parse(height_s).intValue();
+			height = (double) nf.parse(height_s).doubleValue();
+			System.out.format("%,2f", height);
 		}else{//1
 			height = (double) nf.parse(height_s).intValue();
 		}
