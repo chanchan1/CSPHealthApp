@@ -75,7 +75,7 @@ public class AddHealthData extends HttpServlet {
 		if(height_s.contains(",")){ //1.0
 			height = (double) nf.parse(height_s).doubleValue();
 			System.out.format("%,2f", height);
-		}else{//1
+		}else{ //1
 			height = (double) nf.parse(height_s).intValue();
 		}
 		if(height<0){
@@ -84,6 +84,13 @@ public class AddHealthData extends HttpServlet {
 			throw new IllegalArgumentException("Height cannot be zero!");
 		}
 		int weight = nf.parse(weight_s).intValue();
+		if(weight > 0){
+			System.out.println(weight);
+		}else if(weight<0){
+			throw new IllegalArgumentException("Weight cannot be negative!");
+		}else if(weight==0){
+			throw new IllegalArgumentException("Weight cannot be zero!");
+		}
 		String allergies = ESAPI.encoder().encodeForHTML(allergies_s);		
 				
 		double bloodSugar = (double) nf.parse(bloodSugar_s).intValue();
