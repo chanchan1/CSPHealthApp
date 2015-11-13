@@ -25,7 +25,7 @@
 
 	<div class="container" id="body-container">
 	<div class="row">
-		<h1>Here is the place where you can find help!</h1>
+		<h1>Here is the place where you <STRIKE>can</STRIKE> cannot find help!</h1>
 	</div>
 	<div class="row">
 		not implemented yet
