@@ -64,6 +64,16 @@ public class AddHealthData extends HttpServlet {
 		}
 		request.getRequestDispatcher("Health.jsp").forward(request, response);
 	}
+	
+	public boolean isInteger(String input) {
+		try {
+			Integer.parseInt(input);
+			return true;
+		}
+		catch(Exception b) {
+			return false;
+		}
+	}
 
 	public HealthDataEntry buildHealthDataEntryFromRequestParams(String height_s, String weight_s, String allergies_s,
 			String bloodSugar_s, String cholesterolLevel_s, String bloodType_s) throws ParseException, IllegalArgumentException {
@@ -74,7 +84,6 @@ public class AddHealthData extends HttpServlet {
 		double height;
 		if(height_s.contains(",")){ //1.0
 			height = (double) nf.parse(height_s).doubleValue();
-			System.out.format("%,2f", height);
 		}else{ //1
 			height = (double) nf.parse(height_s).intValue();
 		}
@@ -91,8 +100,12 @@ public class AddHealthData extends HttpServlet {
 		}else if(weight==0){
 			throw new IllegalArgumentException("Weight cannot be zero!");
 		}
-		String allergies = ESAPI.encoder().encodeForHTML(allergies_s);		
-				
+		String allergies;
+		if(!(isInteger(allergies_s))) {
+			allergies = ESAPI.encoder().encodeForHTML(allergies_s);		
+		}else{
+			throw new IllegalArgumentException("Allergies cannot be numbers!");
+		}
 		double bloodSugar = (double) nf.parse(bloodSugar_s).intValue();
 		double cholesterolLevel = (double) nf.parse(cholesterolLevel_s).intValue();
 		String bloodType = bloodType_s;
