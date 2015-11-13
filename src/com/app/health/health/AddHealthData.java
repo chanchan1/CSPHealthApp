@@ -65,13 +65,14 @@ public class AddHealthData extends HttpServlet {
 		request.getRequestDispatcher("Health.jsp").forward(request, response);
 	}
 	
-	public boolean isInteger(String input) {
+	public boolean isString(String input) {
 		try {
-			Integer.parseInt(input);
-			return true;
+			NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
+			nf.parse(input).doubleValue();
+			return false;
 		}
 		catch(Exception b) {
-			return false;
+			return true;
 		}
 	}
 
@@ -101,7 +102,7 @@ public class AddHealthData extends HttpServlet {
 			throw new IllegalArgumentException("Weight cannot be zero!");
 		}
 		String allergies;
-		if(!(isInteger(allergies_s))) {
+		if(isString(allergies_s)) {
 			allergies = ESAPI.encoder().encodeForHTML(allergies_s);		
 		}else{
 			throw new IllegalArgumentException("Allergies cannot be numbers!");
