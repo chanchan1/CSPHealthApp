@@ -2,7 +2,7 @@
 		Dozent: Dr. Christoph Peylo
 		Teilnehmer: Sarah Schuchardt, Alexander Schmitz, Sebastian Dittrich
 		=========================================================================
-		created with Eclipse JEE running on ArchLinux, powered by Apache Tomcat 8 --%>
+		created with Eclipse JEE running with Java 1.8, powered by Apache Tomcat 8 --%>
 		
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,6 +18,14 @@
 		<title>CSPHealthApp Health Data</title>
 		<link rel="stylesheet" href="style/yourHealth.css">
 		<link rel="stylesheet" href="style/bootstrap.css">
+		<script language="javascript" type="text/javascript"
+			src="scripts/lib/jquery-2.1.4.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="scripts/lib/d3.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="scripts/lib/bootstrap.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="scripts/yourHealth.js"></script>
 	</head>
 	<body>
 	<!-- Header -->
@@ -27,7 +35,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<h2>Health Data</h2>
-			<table class="table table-striped">
+			<table id="HealthDataTable" class="table table-striped">
 				<thead>
 					<tr>
 						<td>Date</td>
@@ -42,11 +50,11 @@
 				<c:forEach items="${healthData.entries}" var="entry">
 					<tr>
 						<td>${entry.creationDate}</td>
-						<td>${entry.height}</td>
-						<td>${entry.weight}</td>
+						<td class="decimal">${entry.height}</td>
+						<td class="decimal">${entry.weight}</td>
 						<td>${entry.allergies}</td>
-						<td>${entry.bloodSugar}</td>
-						<td>${entry.cholesterolLevel}</td>
+						<td class="decimal">${entry.bloodSugar}</td>
+						<td class="decimal">${entry.cholesterolLevel}</td>
 						<td>${entry.bloodType}</td>
 					</tr>
 				</c:forEach>
