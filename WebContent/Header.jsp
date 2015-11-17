@@ -25,9 +25,11 @@
 			</h3>
 		</div>
 	</div>
+</div>
+<div class="container-fluid">
 	<div class="row">
 		<c:if test="${not empty error}">
-			<div class="alert alert-danger" role="alert">
+			<div class="alert alert-danger general-error" role="alert">
 			${error}<br /></div>
 		</c:if>
 	</div>

@@ -70,11 +70,13 @@ thead td:last-child{
   border-top-right-radius:10px;
 }
 
+.general-error{
+	text-align: center;
+}
+
 /*
  Chart CSS
 */
-
-
 
 body {
   font: 10px sans-serif;
