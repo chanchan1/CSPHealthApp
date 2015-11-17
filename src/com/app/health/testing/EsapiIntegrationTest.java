@@ -9,6 +9,12 @@ public class EsapiIntegrationTest {
 	{
 		System.out.println("ESAPI.accessController found: " 
                                + ESAPI.accessController());
+		
+		System.out.println(Thread
+        .currentThread()
+        .getContextClassLoader()
+        .getResource(""));
+
 	}
 }
 
