@@ -76,7 +76,12 @@ public class AddHealthData extends HttpServlet {
 		}
 	}
 	
-	public void validateInput(double input) throws ParseException, IllegalArgumentException {
+	public double validateDoubleInput(String input_s) throws ParseException, IllegalArgumentException {
+		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
+		
+		
+		double input = nf.parse(input_s).doubleValue();
+		
 		if(input > 0) {
 			System.out.println(input);
 		}else if(input < 0){
@@ -84,19 +89,30 @@ public class AddHealthData extends HttpServlet {
 		}else if(input == 0){
 			throw new IllegalArgumentException("Values cannot be zero.");
 		}
+		
+		return input;
 	}
-
+	
+	public BloodType validateEnumInput(String input_s) throws IllegalArgumentException {
+		BloodType input = null;
+		switch(input_s){
+			case "A": input = BloodType.A; break;
+			case "B": input = BloodType.B; break;
+			case "AB": input = BloodType.AB; break;
+			case "0": input = BloodType.ZERO; break;
+			default: throw new IllegalArgumentException("Nice try :-)");
+		}		
+		return input;
+	}
+	
 	public HealthDataEntry buildHealthDataEntryFromRequestParams(String height_s, String weight_s, String allergies_s,
 			String bloodSugar_s, String cholesterolLevel_s, String bloodType_s) throws ParseException, IllegalArgumentException {
 
-		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
 		HealthDataEntry p = null;
 		
-		double height = nf.parse(height_s).doubleValue();
-		validateInput(height);
+		double height = validateDoubleInput(height_s);
 		
-		double weight = nf.parse(weight_s).doubleValue();
-		validateInput(weight);
+		double weight = validateDoubleInput(weight_s);
 				
 		String allergies;
 		if(isString(allergies_s)) {
@@ -105,11 +121,9 @@ public class AddHealthData extends HttpServlet {
 			throw new IllegalArgumentException("Allergies cannot be numbers!");
 		}
 		
-		double bloodSugar = nf.parse(bloodSugar_s).doubleValue();
-		validateInput(bloodSugar);
+		double bloodSugar = validateDoubleInput(bloodSugar_s);
 		
-		double cholesterolLevel = nf.parse(cholesterolLevel_s).doubleValue();
-		validateInput(cholesterolLevel);
+		double cholesterolLevel = validateDoubleInput(cholesterolLevel_s);
 
 		String bloodType = bloodType_s;
 
