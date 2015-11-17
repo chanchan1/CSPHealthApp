@@ -4696,7 +4696,7 @@
 			<url-pattern>/index.jsp</url-pattern>
 			<url-pattern>/RegisterForm.jsp</url-pattern>
 			<url-pattern>/Logout.jsp</url-pattern>
-			<url-pattern>/logo/base.png</url-pattern>
+			<url-pattern>/logo/*</url-pattern>
 			<url-pattern>/style/*</url-pattern>
 		</web-resource-collection>
 	</security-constraint>
