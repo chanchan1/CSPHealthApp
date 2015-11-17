@@ -8,14 +8,14 @@ import java.util.Date;
 public class HealthDataEntry {
 
 	private double height;
-	private int weight;
+	private double weight;
 	private String allergies;
 	private double bloodSugar;
 	private double cholesterolLevel;
 	private Date creationDate;
 	private BloodType bloodType;
 
-	public HealthDataEntry(double height, int weight, String allergies, double bloodSugar, double cholesterolLevel,
+	public HealthDataEntry(double height, double weight, String allergies, double bloodSugar, double cholesterolLevel,
 			String bloodType) {
 		super();
 		this.height = height;
@@ -41,7 +41,7 @@ public class HealthDataEntry {
 		this.height = height;
 	}
 
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
